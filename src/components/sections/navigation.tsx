@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -79,15 +80,21 @@ export function Navigation() {
                 <span className="relative z-10">{item.label}</span>
               </motion.a>
             ))}
+            
+            {/* Theme toggle */}
+            <ThemeToggle className="ml-2" size={18} />
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="rounded-lg p-2 text-foreground md:hidden"
-          >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* Mobile controls */}
+          <div className="flex items-center gap-2 md:hidden">
+            <ThemeToggle className="rounded-lg" size={18} />
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="rounded-lg p-2 text-foreground"
+            >
+              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </motion.nav>
 

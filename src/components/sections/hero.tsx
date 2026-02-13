@@ -10,7 +10,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0">
         <motion.div
           className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full opacity-20 blur-[120px]"
-          style={{ background: "oklch(0.75 0.15 280)" }}
+          style={{ background: "var(--primary)" }}
           animate={{
             x: [0, 30, -20, 0],
             y: [0, -40, 20, 0],
@@ -24,7 +24,7 @@ export function Hero() {
         />
         <motion.div
           className="absolute bottom-1/4 right-1/4 h-[400px] w-[400px] rounded-full opacity-15 blur-[100px]"
-          style={{ background: "oklch(0.72 0.18 330)" }}
+          style={{ background: "var(--accent)" }}
           animate={{
             x: [0, -30, 20, 0],
             y: [0, 20, -30, 0],
@@ -38,7 +38,7 @@ export function Hero() {
         />
         <motion.div
           className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-10 blur-[80px]"
-          style={{ background: "oklch(0.8 0.14 200)" }}
+          style={{ background: "var(--chart-3)" }}
           animate={{
             scale: [1, 1.2, 1],
           }}
@@ -54,7 +54,7 @@ export function Hero() {
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `linear-gradient(oklch(0.95 0.01 280) 1px, transparent 1px), linear-gradient(90deg, oklch(0.95 0.01 280) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
         }}
       />
@@ -79,9 +79,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
+          className="mb-6 text-5xl tracking-tight sm:text-6xl md:text-7xl lg:text-8xl"
+          style={{ fontFamily: "var(--font-display), Georgia, serif", fontWeight: 400, letterSpacing: "-0.02em" }}
         >
-          <span className="gradient-text">Azza Shanina</span>
+          <span className="gradient-text" style={{ fontStyle: "italic", fontWeight: 500 }}>Azza Shanina</span>
         </motion.h1>
 
         {/* Animated typing title */}
